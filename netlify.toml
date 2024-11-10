@@ -1,0 +1,6 @@
+[build]
+  command = "docker build -t genlanguage . && docker run -d -p 5173:5173 genlanguage"
+  publish = "dist"  
+
+[context.production.environment]
+  DOCKER_HOST = "unix:///var/run/docker.sock"
